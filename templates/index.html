@@ -1,0 +1,17 @@
+<html >
+<head>
+  <title>Machine Learning Model Deployment</title>
+</head>
+<body>
+ <div>
+    <h1>Text Classification</h1>
+    <form action="{{ url_for('predict')}}" method="post">
+        <input type="text" name="text" placeholder="Text to check" required="required" />
+     
+        <button type="submit">Predict</button>
+    </form>
+   <br>
+   {{ prediction_text }}
+ </div>
+</body>
+</html>
