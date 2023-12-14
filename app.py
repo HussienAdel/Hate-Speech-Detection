@@ -31,9 +31,8 @@ def preprocess_text(text):
 
 app = Flask(__name__) # Initialize the flask App
 
-model = pickle.load(open('myModel.pkl', 'rb')) # Load the trained model
-vactorizer = pickle.load(open('vactorizer.pkl', 'rb'))
-
+model = pickle.load(open('./models/myModel.pkl', 'rb')) # Load the trained model
+vactorizer = pickle.load(open('./models/vactorizer.pkl', 'rb'))
 
 @app.route('/') # Homepage
 def home():
@@ -58,16 +57,12 @@ def predict():
     else :
         msg = "this is a NORMAL text"
 
-
     # Return the prediction
     return render_template('index.html', prediction_text='Predicted text: {} '.format(msg))
 
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-
 
 
 '''
